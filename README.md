@@ -1,13 +1,13 @@
 # password-generator
 
 ### Webpage Usage
-This webpage is used to help users develop a secure password by randomly generating password using letters, numbers, and special characters. 
+This webpage is used to help users develop a secure password by randomly generating a password using letters, numbers, and special characters. 
 
 ### The user is welcomed to the page with this screen:
-![](Images/PasswordGeneratorWithoutPW.png)
+<img src="Images/PasswordGeneratorWithoutPW.png" width = "550">
 
 ### Prompts appear on screen to get the user's input about the password:
-![](Images/PasswordGeneratorPrompt.png)
+<img src="Images/PasswordGeneratorPrompt.png" width = "550">
 
 
 ### Expected User Inputs:
@@ -23,16 +23,15 @@ This webpage is used to help users develop a secure password by randomly generat
  - User must select OK to include at least one character type
 
 
-#### Possible Values for the Password :
-Numbers = 0123456789
-Lowercase Letters = abcdefghijklmnopqrstuvwxyz
-Uppercase Letters = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-Special Characters = !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
+#### Possible Values for the Password:
+- Numbers = 0123456789
+- Lowercase Letters = abcdefghijklmnopqrstuvwxyz
+- Uppercase Letters = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Special Characters = !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 
 
 ### When password generator is successful, the password will appear on screen in the box:
-![](Images/PasswordGeneratorWithPW.png)
-
+<img src="Images/PasswordGeneratorWithPW.png" width = "550">
 
 
 
