@@ -1,26 +1,19 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 let passwordLength;
 let chooseLowercase;
 let chooseUppercase;
-let chooseNumeric;
+let chooseNumbers;
 let chooseSpecialCharacters;
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  let passwordText = document.querySelector("#password");
+  passwordText.value = generatePassword;
 }
 
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
-
-
-generateBtn.addEventListener("click", passwordLengthValidation)
+// Listener to generate button
+generateBtn.addEventListener("click", passwordLengthValidation);
 
 // Password Length Prompt and Validation
 function passwordLengthValidation() {
@@ -28,30 +21,52 @@ function passwordLengthValidation() {
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = parseInt(prompt("Choose a length of at least 8 characters and no more than 128 characters"));
   }
-    passwordCharactersValidation();  
-
+  passwordCharactersValidation();
 }
 
-//const passwordCharacters = prompt("What character types would you like to include?");
-
-
-// Ask user about lowercase, uppercase, numeric, and special characters
+// Ask user about lowercase, uppercase, numbers, and special characters
 function passwordCharactersValidation() {
-  let chooseLowercase = confirm("Click OK to include lowercase characters. CANCEL if not.");
-  console.log(chooseLowercase);
-  let chooseUppercase = confirm("Click OK to include uppercase characters. CANCEL if not.");
-  console.log(chooseUppercase);
-  let chooseNumeric = confirm("Click OK to include numeric values. CANCEL if not.");
-  console.log(chooseNumeric);
-  let chooseSpecialCharacters = confirm("CLICK OK to include special characters. CANCEL if not.");
-  choose.log(chooseSpecialCharacters);
- // Validate at least one character type should be selected
-    // while (chooseLowercase === false && chooseUppercase === false && chooseNumeric === false && chooseSpecialCharacters === false){
-    //   alert("Please select OK to include at least one character type.")
-    //   let chooseLowercase = confirm("Click OK to include lowercase characters. CANCEL if not.");
-    //   let chooseUppercase = confirm("Click OK to include uppercase characters. CANCEL if not.");
-    //   let chooseNumeric = confirm("Click OK to include numeric values. CANCEL if not.");
-    //   let chooseSpecialCharacters = confirm("CLICK OK to include special characters. CANCEL if not.");
+  chooseLowercase = confirm("Click OK to include lowercase characters. CANCEL if not.");
+  chooseUppercase = confirm("Click OK to include uppercase characters. CANCEL if not.");
+  chooseNumbers = confirm("Click OK to include numeric values. CANCEL if not.");
+  chooseSpecialCharacters = confirm("CLICK OK to include special characters. CANCEL if not.");
+ // Validate at least one character type was selected
+    while (chooseLowercase === false && chooseUppercase === false && chooseNumbers === false && chooseSpecialCharacters === false){
+       alert("Please select OK to include at least one character type.");
+         chooseLowercase = confirm("Click OK to include lowercase characters. CANCEL if not.");
+         chooseUppercase = confirm("Click OK to include uppercase characters. CANCEL if not.");
+         chooseNumbers = confirm("Click OK to include numeric values. CANCEL if not.");
+         chooseSpecialCharacters = confirm("CLICK OK to include special characters. CANCEL if not.");
     }
+    passwordGenerator();
 }
-// Create radio buttons for lowercase, uppercase, numeric, and/or special characters
+
+let passwordNumbers = '0123456789'
+let passwordLowerLetters = 'abcdefghijklmnopqrstuvwxyz'
+let passwordUpperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let passwordSpecialCharacters = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+let passwordString = "";
+let generatePassword = "";
+
+// Function to create the password
+function passwordGenerator (){
+  if (chooseLowercase) {
+    passwordString = passwordString + passwordLowerLetters;
+  }
+  if (chooseUppercase) {
+    passwordString = passwordString + passwordUpperLetters;
+  } 
+  if (chooseNumbers) {
+    passwordString = passwordString + passwordNumbers;
+  }
+  if (chooseSpecialCharacters) {
+    passwordString = passwordString + passwordSpecialCharacters;
+  }
+  for (let i = 0; i < passwordLength; i++) {
+    generatePassword += passwordString.charAt(Math.floor(Math.random() * passwordString.length));
+  };
+// Add password to the screen
+  writePassword();
+}
+
+
