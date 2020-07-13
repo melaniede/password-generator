@@ -4,10 +4,10 @@
 This webpage is used to help users develop a secure password by randomly generating password using letters, numbers, and special characters. 
 
 ### The user is welcomed to the page with this screen:
-Insert image of initial screen 
+![](Images/PasswordGeneratorWithoutPW.png)
 
 ### Prompts appear on screen to get the user's input about the password:
-Insert image of the first prompt
+![](Images/PasswordGeneratorPrompt.png)
 
 
 ### Expected User Inputs:
@@ -30,9 +30,9 @@ Uppercase Letters = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 Special Characters = !"#$%&()*+,-./:;<=>?@[\]^_`{|}~
 
 
-
 ### When password generator is successful, the password will appear on screen in the box:
-Insert image of success
+![](Images/PasswordGeneratorWithPW.png)
+
 
 
 
